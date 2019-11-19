@@ -36,3 +36,12 @@ img {
   width: 300px;
   margin: 40px auto;
 }
+
+p#by {
+  text-shadow: none;
+}
+
+a,
+a:visited {
+  color: #57B90B;
+}
