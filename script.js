@@ -18,6 +18,10 @@ function updateTime() {
   var minute = 60 - date.getUTCMinutes();
   var second = 60 - date.getUTCSeconds();
 
+  hour = hour < 10 ? '0' + hour : hour;
+  minute = minute < 10 ? '0' + minute : minute;
+  second = second < 10 ? '0' + second : second;
+
   var timeToUpdate = hour + ':' + minute + ':' + second;
 
   document.querySelector('#timeToUpdate').innerHTML = timeToUpdate
