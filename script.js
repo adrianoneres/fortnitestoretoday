@@ -11,7 +11,7 @@ axios.get('https://fortnite-api.theapinetwork.com/store/get').then(function(resp
   })
 })
 
-function updateTime() {
+var updateTime = setInterval(function() {
   var date = new Date()
   
   var hour = 23 - date.getUTCHours();
@@ -24,9 +24,12 @@ function updateTime() {
 
   var timeToUpdate = hour + ':' + minute + ':' + second;
 
-  document.querySelector('#timeToUpdate').innerHTML = timeToUpdate
-}
+  if (timeToUpdate === '00:00:00') {
+    clearInterval(updateTime)
+    setInterval(function() {
+      location.reload()
+    }, 5000)
+  }
 
-setInterval(function() {
-  updateTime()
+  document.querySelector('#timeToUpdate').innerHTML = timeToUpdate
 }, 1000)
