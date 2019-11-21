@@ -15,7 +15,7 @@ var updateTime = setInterval(function() {
   var date = new Date()
   
   var hour = 23 - date.getUTCHours();
-  var minute = 60 - date.getUTCMinutes();
+  var minute = 59 - date.getUTCMinutes();
   var second = 60 - date.getUTCSeconds();
 
   hour = hour < 10 ? '0' + hour : hour;
